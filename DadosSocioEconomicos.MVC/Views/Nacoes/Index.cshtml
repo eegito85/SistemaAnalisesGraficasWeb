@@ -1,0 +1,56 @@
+﻿@model IEnumerable<DadosSocioEconomicos.Entidades.Entidades.Nacao>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Lista de nações cadastradas</h2>
+
+<p>
+    <a asp-action="Create">Adicionar nova nação</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th style="text-align:center">
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th style="text-align:center">
+                @Html.DisplayNameFor(model => model.Populacao)
+            </th>
+            <th style="text-align:center">
+                @Html.DisplayNameFor(model => model.PIB)
+            </th>
+            <th style="text-align:center">
+                @Html.DisplayNameFor(model => model.IDH)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td style="text-align:center">
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td style="text-align:center">
+                @Html.DisplayFor(modelItem => item.Populacao)
+            </td>
+            <td style="text-align:center">
+                @Html.DisplayFor(modelItem => item.PIB)
+            </td>
+            <td style="text-align:center">
+                @Html.DisplayFor(modelItem => item.IDH)
+            </td>
+            <td style="text-align:center">
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Apagar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<p>
+    <a asp-action="Grafico">Voltar</a>
+</p>

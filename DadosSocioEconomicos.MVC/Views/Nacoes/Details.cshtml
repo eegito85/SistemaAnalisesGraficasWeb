@@ -1,0 +1,42 @@
+﻿@model DadosSocioEconomicos.Entidades.Entidades.Nacao
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Nação a editar</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Populacao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Populacao)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PIB)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PIB)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IDH)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IDH)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Editar</a> |
+    <a asp-action="Index">Voltar</a>
+</div>
